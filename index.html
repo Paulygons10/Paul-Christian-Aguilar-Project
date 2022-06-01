@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    <div id="loading">
+        <div id="spinner"></div>
+    </div>
+
+    <div id="magnify">
+        <h1 onclick="closemagnify()"><i class="fas fa-times"></i></h1>
+        <div id="img_here"></div>
+    </div>
+
+    <header id="header" class="animated slideInDown" style="animation-delay:1.8s;">
+        <table>
+            <tr>
+                <td id="logo">My Profile</td>
+                <td id="navigation">
+                    <a href="#work">my profile</a>
+                    <a href="index1.html">my works</a>
+                    <a href="index2.html">my motivation</a>
+                    <a href="#contact">contact</a>
+                </td>
+            </tr>
+        </table>
+    </header>
+
+
+    <table id="top_part">
+        <tr>
+            <td id="about" class="animated slideInLeft" style="animation-delay:2s;">
+                <div></div>
+                <h1>Paul Christian D. Aguilar</h1>
+                <h2>Computer Engineer</h2>
+                <h3>+63915 812 6657</h3>
+                <table>
+                    <tr>
+                        <td class="animated zoomIn" style="animation-delay:2.2s;"><a class="social" href="https://www.facebook.com/paul.c.aguilar"><i class="fab fa-facebook"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:2.4s;"><a class="social" href="https://twitter.com/ccianomaly"><i class="fab fa-twitter"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:2.6s;"><a class="social" href="https://www.instagram.com/ccianomaly/"><i class="fab fa-instagram"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="https://www.linkedin.com/in/aguilar-paul-christian-d/"><i class="fab fa-linkedin"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:3.0s;"><a class="social" href="https://www.youtube.com/channel/UC7Qdm3AJ9URjcc8ps1HxGjA"><i class="fab fa-youtube"></i></a></td>
+                    </tr>
+                </table>
+            </td>
+            <td id="rightImage" class="animated jackInTheBox" style="animation-delay:2.2s;"></td>
+        </tr>
+    </table>
+
+
+    <div id="work">
+        <h1>Experience</h1>
+        <table>
+            <tr>
+                <td id="inside">
+                    <h2>College On-the Job Training</h2>
+                    <h3>ICPEP-Singapore (August to September 2021)</h3>
+                    <p>Under the Data Science and Cybersecurity Department wherein the internship allowed actual experience in both areas of the said professional fields.</p>
+                </td>
+                <td id="photos">
+                    <img onclick="magnify($(this).attr('src'))" src="https://icpepsingapore.files.wordpress.com/2018/02/icpepsg.jpg?w=199&h=199">
+                </td>
+            </tr>
+
+            <tr>
+                <td id="inside0">
+                    <h2>Freelance Blog/Article Writer</h2>
+                    <h3>Dailyworx Solutions (September 2019 to Present)</h3>
+                    <p>Working on different articles and blogs in a wide variety of fields and different areas in the world while following the SEO rules.</p>
+                </td>
+                <td id="photos">
+                    <img onclick="magnify($(this).attr('src'))" src="data:image/jpeg;base64,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">
+                </td>
+            </tr>
+
+            <tr>
+                <td id="inside">
+                    <h2>Senior High School Immersion</h2>
+                    <h3>All Waste Services (November 2017 to March 2018)</h3>
+                    <p>Toured in all departments of the site and assigned in the Production and Engineering Department as part of the training.</p>
+                </td>
+                <td id="photos">
+                    <img onclick="magnify($(this).attr('src'))" width="225px" src="https://siva.jsstatic.com/ph/64487/images/logo/64487_logo_0_21487565.jpg">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="bio">
+        <h1>Education</h1>
+        <table>
+            <tr>
+                <td id="photos">
+                    <img onclick="magnify($(this).attr('src'))" src="pics/bulsu.jpg">
+                </td>
+                <td id="inside">
+                    <h2>Undergraduate Degree: Bachelor of Science in Computer Engineering</h2>
+                    <h3>Bulacan State University (August 2018 to Present)</h3>
+                    <p>The of the undergraduate degree encompasses both Hardware and Software Engineering as well as the integration of the two with the aid of General Engineering courses.</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td id="photos">
+                    <img onclick="magnify($(this).attr('src'))" src="pics/bulsu.jpg">
+                </td>
+                <td id="inside0">
+                    <h2>Senior High School: STEM Strand</h2>
+                    <h3>Bulacan State University (June 2016 to March 2018)</h3>
+                    <p>Under the Academic Track-STEM Strand, the program covered all the general subjects necessary for science, technology, engineering, and mathematics courses.</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td id="photos">
+                    <img onclick="magnify($(this).attr('src'))" src="pics/bulsu.jpg">
+                </td>
+                <td id="inside">
+                    <h2>Junior High School</h2>
+                    <h3>Bulacan State University (June 2012 to March 2016)</h3>
+                    <p>In the Junior High School level, all the basic curriculum subjects are at the peak of difficulty and the university also provided extra & co-activities for personal development.</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td id="photos">
+                    <img onclick="magnify($(this).attr('src'))" src="pics/smpcs logo.jpg">
+                </td>
+                <td id="inside0">
+                    <h2>Kindergarten to Grade School</h2>
+                    <h3>St. Martin de Porres Catholic School of Guiguinto (June 2005 to March 2012)</h3>
+                    <p>As the first portion of the basic education curriculum, it became the foundation of the knowledge and skills necessary to qualify high school.</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="bio">
+        <table align="center">
+            <tr>
+                <td id="inside0" rowspan = "2"><h1>Academic Distinctions</h1></td>
+
+                <td id="inside">
+                    <h2>College</h2>
+                    <p><b>Dean’s Lister</b> / 2019, 2020, & 2021</p>
+                </td>
+                
+                <td id="inside0">
+                    <h2>Senior High School</h2>
+                    <p><b>With High Honors</b> / 2018</p>
+                </td>
+            </tr>
+    
+            <tr>
+                <td id="inside0">
+                    <h2>Junior High School</h2>
+                    <p><b>Top Student</b> / 2012-2016</p>
+                </td>
+
+                <td id="inside">
+                    <h2>Grade School</h2>
+                    <p><b>4th Honorable Mention</b> / 2012</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="bio">
+        <table>
+            <tr>
+                <td><h1>Co-Curricular Participation</h1></td>
+                <td id="inside">
+                    <h2>ICPEP Project Presentation and Competition 2021</h2>
+                    <h3>1st Runner Up / August 27-29, 2021</h3>
+                    <p>1st ICpEP International Convention and 9thICpEP National Convention and General Assembly</p>
+                </td>
+                
+                <td id="inside0">
+                    <h2>USHER Hackathon 2021</h2>
+                    <h3>1st Runner Up / July 15-17, 2021</h3>
+                    <p>USHER Technologies</p>
+                </td>
+                
+                <td id="inside">
+                    <h2>CpE Challenge Quiz Bee</h2>
+                    <h3>1st Runner Up / May 17, 2021</h3>
+                    <p>Institute of Computer Engineers of the Philippines - Region III</p>
+                </td>
+
+                <td id="inside0">
+                    <h2>Chemistry Quiz Bowl</h2>
+                    <h3>Qualifier / September 19, 2018</h3>
+                    <p>Science and Technology Week 2018</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><h1>ExtraCurricular Participation</h1></td>
+                <td id="inside0">
+                    <h2>Vice President - External Affairs</h2>
+                    <h3>ICPEP SE BulSU Organization</h3>
+                    <p>SY. 2021-Present</p>
+                </td>
+                
+                <td id="inside">
+                    <h2>Volunteer - RIPFormat: Bringing Dead Computers back to Life</h2>
+                    <h3>Brigada E-Skwela Project and Fixee.PH</h3>
+                    <p>October-December, 2020</p>
+                </td>
+                
+                <td id="inside0">
+                    <h2>Assistant Secretary</h2>
+                    <h3>ICPEP SE BulSU Organization</h3>
+                    <p>SY. 2020-2021</p>
+                </td>
+
+                <td id="inside">
+                    <h2>Chemistry Quiz Bowl</h2>
+                    <h3>Qualifier / September 19, 2018</h3>
+                    <p>Science and Technology Week 2018</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="bio">
+        <h1>Seminars</h1>
+        <table>
+            <tr>
+                <td id="inside">
+                    <h2>Linux Administrator Career Guide</h2>
+                    <h3>Erovoutika Robotics and Automation Solutions</h3>
+                    <p>September 12, 2021</p>
+                </td>
+                
+                <td id="inside0">
+                    <h2>Career Guide to Cybersecurity</h2>
+                    <h3>Erovoutika Robotics and Automation Solutions</h3>
+                    <p>August 22, 2021</p>
+                </td>
+                
+                <td id="inside">
+                    <h2>College Orientation for OJT at ICPEP.SG (Singapore-based)</h2>
+                    <h3>Bulacan State University</h3>
+                    <p>July 18, 2021</p>
+                </td>
+
+                <td id="inside0">
+                    <h2>Back to Basics, the ABC of Leadership</h2>
+                    <h3>SAIL Academy 2021 for Student Organizations Leaders (BulSU)</h3>
+                    <p>April 12-May 1, 2021</p>
+                </td>
+
+                <td id="inside">
+                    <h2>COEgnizance 2021: The Endless Quest to Embody our Ideals and Aspirations</h2>
+                    <h3>College of Engineering, Local Student Council (BulSU)</h3>
+                    <p>March 20, 2021</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td id="inside0">
+                    <h2>COEnhance: Arduino and AutoCAD Workshop</h2>
+                    <h3>College of Engineering, Local Student Council (BulSU)</h3>
+                    <p>March 13, 2021</p>
+                </td>
+                
+                <td id="inside">
+                    <h2>Volunteer - RIPFormat: Bringing Dead Computers back to Life</h2>
+                    <h3>Brigada E-Skwela Project and Fixee.PH</h3>
+                    <p>October-December, 2020</p>
+                </td>
+                
+                <td id="inside0">
+                    <h2>Virtual Assembly: “LEAP: Rising Together in this Pandemic”</h2>
+                    <h3>ICPEP SE Region 3</h3>
+                    <p>January 22, 2021</p>
+                </td>
+
+                <td id="inside">
+                    <h2>Hustle and Bustle Your Way to Success</h2>
+                    <h3>Bulacan State University</h3>
+                    <p>November 29, 2017</p>
+                </td>
+
+                <td id="inside0">
+                    <h2>Work Immersion 2017: Getting Ready and Steady</h2>
+                    <h3>Bulacan State University </h3>
+                    <p>November 17, 2017</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="bio">
+        <h1>Certifications</h1>
+        <table>
+            <tr>
+                <td id="inside">
+                    <h2>Blockchain Essentials (BCO101EN)</h2>
+                    <h3>IBM Developer Skills Network (Cognitive Class.AI)</h3>
+                    <p>August 18, 2021</p>
+                </td>
+                
+                <td id="inside0">
+                    <h2>Data Privacy Fundamentals (DS301EN)</h2>
+                    <h3>IBM Developer Skills Network (Cognitive Class.AI)</h3>
+                    <p>August 17, 2021</p>
+                </td>
+                
+                <td id="inside">
+                    <h2>DataOps Methodology (DE205EN)</h2>
+                    <h3>IBM Developer Skills Network (Cognitive Class.AI)</h3>
+                    <p>August 16, 2021</p>
+                </td>
+
+                <td id="inside0">
+                    <h2>Python 101 for Data Science (PY101EN)</h2>
+                    <h3>IBM Developer Skills Network (Cognitive Class.AI)</h3>
+                    <p>August 12, 2021</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td id="inside0">
+                    <h2>Data Analysis with Python (DA101EN)</h2>
+                    <h3>IBM Developer Skills Network (Cognitive Class.AI)</h3>
+                    <p>August 12, 2021</p>
+                </td>
+                
+                <td id="inside">
+                    <h2>Data Visualization with Python (DV101EN)</h2>
+                    <h3>IBM Developer Skills Network (Cognitive Class.AI)</h3>
+                    <p>August 12, 2021</p>
+                </td>
+                
+                <td id="inside0">
+                    <h2>Data Analysis Tools (DS105EN)</h2>
+                    <h3>IBM Developer Skills Network (Cognitive Class.AI)</h3>
+                    <p>August 12, 2021</p>
+                </td>
+
+                <td id="inside">
+                    <h2>Data Science Methodology (DS103EN)</h2>
+                    <h3>IBM Developer Skills Network (Cognitive Class.AI)</h3>
+                    <p>August 11, 2021</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td id="inside">
+                    <h2>Introduction to Data Science (DS101EN)</h2>
+                    <h3>IBM Developer Skills Network (Cognitive Class.AI)</h3>
+                    <p>August 11, 2021</p>
+                </td>
+                
+                <td id="inside0">
+                    <h2>Introduction to Cloud (CC101EN)</h2>
+                    <h3>IBM Developer Skills Network (Cognitive Class.AI)</h3>
+                    <p>August 11, 2021</p>
+                </td>
+                
+                <td id="inside">
+                    <h2>NSE1 Network Security Associate</h2>
+                    <h3>Fortinet Network Security Expert Certification (Fortinet NSE Institute)</h3>
+                    <p>February 5, 2021 (Retake: August 23, 2021)</p>
+                </td>
+
+                <td id="inside0">
+                    <h2>NSE2 Network Security Associate</h2>
+                    <h3>Fortinet Network Security Expert Certification (Fortinet NSE Institute)</h3>
+                    <p>February 5, 2021 (Retake: August 24, 2021)</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="bio">
+        <table align="center">
+            <tr>
+                <td id="inside0" rowspan = "2"><h1>Skills</h1></td>
+
+                <td id="inside">
+                    <h3>-Computer Hardware and Software Expertise in Troubleshooting and Maintenance<br>
+                        -Microsoft Office Literacy<br>
+                        -Google Suite Experience</h3>
+                </td>
+                
+                <td id="inside0">
+                    <h3>-Programming using C, C++, Java, JavaScript, HTML, CSS, and Python<br>
+                        -Create Database System using MySQL<br>
+                        -Design Embedded Systems and Microprocessors</h3>
+                </td>
+            </tr>
+    
+            <tr>
+                <td id="inside0">
+                    <h3>-Basic Editing Skills of Pictures and Videos<br>
+                        -Elementary Arithmetic to Advance Mathematics across different fields<br>
+                        -Listening, Speaking, Reading, and Writing in English and Filipino</h3>
+                </td>
+
+                <td id="inside">
+                    <h3>-Board Games Enthusiast<br>
+                        -Research and Technical Skills<br>
+                        -Leadership Skills</h3>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="contact">
+        <h1>contact</h1>
+            <table>
+                <tr>
+                    <td>
+                        <div id="inner_div">
+                            <table id="inner_table">
+                                <tr><img src="pics/formal.jpg" width="25%"></tr>
+                                <tr>
+                                    <td><i class="fas fa-phone"></i> &nbsp; +63915 812 6657</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-at"></i> &nbsp; pcdaguilar@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-map-marker-alt"></i>
+                                    <div id="address">
+                                        Ilang-Ilang<br>
+                                        Guiguinto<br>
+                                        Bulacan, Philippines
+                                    </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a class="social" href="https://www.facebook.com/paul.c.aguilar"><i class="fab fa-facebook"></i></a>
+                                        <a class="social" href="https://twitter.com/ccianomaly"><i class="fab fa-twitter"></i></a>
+                                        <a class="social" href="https://www.instagram.com/ccianomaly/"><i class="fab fa-instagram"></i></a>
+                                        <a class="social" href="https://www.linkedin.com/in/aguilar-paul-christian-d/"><i class="fab fa-linkedin"></i></a>
+                                        <a class="social" href="https://www.youtube.com/channel/UC7Qdm3AJ9URjcc8ps1HxGjA"><i class="fab fa-youtube"></i></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td>
+                        <form>
+                            <input type="text" placeholder="name" required>
+                            <input type="email" placeholder="email" required><br>
+                            <textarea placeholder="your message" required rows="5"></textarea><br>
+                            <button class="btn_one">send</button>
+                        </form> 
+                    </td>
+                </tr>
+            </table>
+    </div>
+
+    
+    <div id="footer">
+        <i>Paul Christian D. Aguilar</i><br> <a href="https://imfunniee.github.io">©imfunniee</a>
+    </div>
+    <script src="index.js" type="text/javascript"></script>
+</body>
+</html>
